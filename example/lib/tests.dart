@@ -47,8 +47,8 @@ class Tester {
       testCompleter.complete();
     };
 
-    peer2.connect();
-    await peer1.connect();
+    peer2.connect({'restartIce': false});
+    await peer1.connect({'restartIce': false});
 
     await peer1.sendText('hello!');
 
@@ -79,8 +79,8 @@ class Tester {
       testCompleter.complete();
     };
 
-    peer2.connect();
-    await peer1.connect();
+    peer2.connect({'restartIce': false});
+    await peer1.connect({'restartIce': false});
 
     await peer1.sendText('hello!');
 
@@ -110,8 +110,8 @@ class Tester {
       testCompleter.complete();
     };
 
-    peer2.connect();
-    await peer1.connect();
+    peer2.connect({'restartIce': false});
+    await peer1.connect({'restartIce': false});
 
     await peer1.sendText('hello!');
 

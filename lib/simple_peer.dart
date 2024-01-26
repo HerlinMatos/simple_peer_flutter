@@ -131,7 +131,7 @@ class Peer {
   }
 
   /// Call to start connection to remote peer.
-  connect() async {
+  connect(Map<String, dynamic> offerOptions) async {
     var completer = Completer();
 
     connection.onIceCandidate = (candidate) async {
@@ -152,7 +152,7 @@ class Peer {
         _notifyDataMessages(message);
       };
 
-      var offer = await connection.createOffer();
+      var offer = await connection.createOffer(offerOptions);
       await connection.setLocalDescription(offer);
       _signaling('offer', offer.toMap());
     } else {

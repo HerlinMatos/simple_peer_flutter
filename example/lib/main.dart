@@ -50,8 +50,8 @@ class _AppState extends State<App> {
       print("Got data from peer1: $data");
     };
 
-    peer2.connect();
-    await peer1.connect();
+    peer2.connect({'restartIce': false});
+    await peer1.connect({'restartIce': false});
 
     await peer1.sendText('hello!');
   }
